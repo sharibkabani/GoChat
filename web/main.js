@@ -1,4 +1,14 @@
 let username = "";
+const userColors = {};
+
+function getRandomColor() {
+	const letters = "0123456789ABCDEF";
+	let color = "#";
+	for (let i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+}
 
 function submitUsername(event) {
 	if (event) event.preventDefault();
@@ -21,7 +31,22 @@ function startWebSocket() {
 
 	ws.onmessage = (event) => {
 		const message = document.createElement("div");
-		message.textContent = event.data;
+		const [user, ...msgParts] = event.data.split(": ");
+		const msg = msgParts.join(": ");
+
+		if (!userColors[user]) {
+			userColors[user] = getRandomColor();
+		}
+
+		const userSpan = document.createElement("span");
+		userSpan.textContent = user + ": ";
+		userSpan.style.color = userColors[user];
+
+		const msgSpan = document.createElement("span");
+		msgSpan.textContent = msg;
+
+		message.appendChild(userSpan);
+		message.appendChild(msgSpan);
 		messages.appendChild(message);
 	};
 
