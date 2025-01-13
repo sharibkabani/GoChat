@@ -4,34 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-Time Chat</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #messages {
-            height: 300px;
-            border: 1px solid #ccc;
-            overflow-y: scroll;
-            padding: 10px;
-        }
-        #form {
-            margin-top: 10px;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Real-Time Chat</h1>
-    <div id="usernameInput">
-        <label for="username">Enter Your Username:</label>
-        <input type="text" id="username" placeholder="Username" autocomplete="off">
-        <button onclick="submitUsername()">Submit</button>
-    </div>
-    <div id="chat" style="display:none;">
-        <div id="messages"></div>
-        <form id="form">
-            <input type="text" id="input" placeholder="Type a message..." autocomplete="off">
-            <button>Send</button>
-        </form>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-center text-blue-500 mb-6">Real-Time Chat</h1>
+        <div id="usernameInput" class="flex flex-col items-center">
+            <label for="username" class="text-lg mb-2">Enter Your Username:</label>
+            <input type="text" id="username" placeholder="Username" autocomplete="off" class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:border-blue-500">
+            <button onclick="submitUsername()" class="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition">Submit</button>
+        </div>
+        <div id="chat" class="hidden flex-col mt-6">
+            <div id="messages" class="h-64 overflow-y-auto border border-gray-300 p-4 rounded mb-4 bg-gray-50"></div>
+            <form id="form" class="flex">
+                <input type="text" id="input" placeholder="Type a message..." autocomplete="off" class="flex-1 p-2 border border-gray-300 rounded-l focus:outline-none focus:border-blue-500">
+                <button class="p-2 bg-blue-500 text-white rounded-r hover:bg-blue-700 transition">Send</button>
+            </form>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

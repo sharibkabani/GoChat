@@ -14,8 +14,8 @@ function submitUsername(event) {
 	if (event) event.preventDefault();
 	username = document.getElementById("username").value.trim();
 	if (username) {
-		document.getElementById("usernameInput").style.display = "none";
-		document.getElementById("chat").style.display = "block";
+		document.getElementById("usernameInput").classList.add("hidden");
+		document.getElementById("chat").classList.remove("hidden");
 		startWebSocket();
 	} else {
 		alert("Please enter a valid username.");
@@ -60,7 +60,6 @@ function startWebSocket() {
 	});
 }
 
-// Add event listener for Enter key in the username input field
 const usernameInput = document.getElementById("username");
 usernameInput.addEventListener("keydown", (event) => {
 	if (event.key === "Enter") {
