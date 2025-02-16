@@ -1,5 +1,3 @@
-const tempVariable = "Hello, World!";
-
 let username = "";
 const userColors = {};
 
