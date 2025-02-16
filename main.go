@@ -22,7 +22,7 @@ var (
 	}
 )
 
-// main function
+
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/ws/{channel}", handleWebSocket)
