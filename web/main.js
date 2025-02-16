@@ -1,6 +1,3 @@
-
-let tempvariable = 0;
-
 let username = "";
 const userColors = {};
 
