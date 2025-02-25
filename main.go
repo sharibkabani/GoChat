@@ -1,3 +1,7 @@
+// main.go
+// This is the main file for the web application.
+// It handles the web socket connections and the redis subscriptions.
+
 package main
 
 import (
