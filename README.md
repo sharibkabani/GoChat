@@ -40,3 +40,12 @@ To get started with GoChat, follow these steps:
 - Redis
   ```sh
   # Installation instructions for Redis can be found at: https://redis.io/docs
+
+# Screenshots
+## Username Creation
+<img width="545" alt="Screenshot 2025-04-15 at 6 54 18 PM" src="https://github.com/user-attachments/assets/63f945d2-cdb6-4f16-8b50-6dd7a0a634e9" />
+
+## Chat Screen
+<img width="450" alt="Screenshot 2025-04-15 at 6 54 11 PM" src="https://github.com/user-attachments/assets/c7acb536-48db-4b27-8aa1-1383d3fe941d" />
+
+
